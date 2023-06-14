@@ -1,7 +1,6 @@
 [
     {
     "codigo_usuario": 1050,
-    "id": 1,
     "nombre": "Carlos Fernando",
     "apellido": "Cordero Rodriguez",
     "telefono": 21224329,
@@ -15,7 +14,6 @@
 },
     {
     "codigo_usuario": 1051,
-    "id": 2,
     "nombre": "Javier Armando",
     "apellido": "Cordero Revolorio",
     "telefono": 25524329,
@@ -29,7 +27,6 @@
 },
     {
     "codigo_usuario": 1052,
-    "id": 3,
     "nombre": "Julio Andres",
     "apellido": "Phoenix Rebach",
     "telefono": 91224129,
@@ -43,7 +40,6 @@
 },
     {
     "codigo_usuario": 1053,
-    "id": 4,
     "nombre": "Kevin Armando",
     "apellido": "Kindred Revol",
     "telefono": 81224329,
@@ -57,7 +53,6 @@
 },
     {
     "codigo_usuario": 1054,
-    "id": 5,
     "nombre": "Carlos Eduardo",
     "apellido": "Cabas Lechuga",
     "telefono": 71774329,
@@ -71,7 +66,6 @@
 },
     {
     "codigo_usuario": 1055,
-    "id": 6,
     "nombre": "Carlos Armando",
     "apellido": "Cordero Revolorio",
     "telefono": 21224329,
@@ -85,7 +79,6 @@
 },
     {
     "codigo_usuario": 1056,
-    "id": 7,
     "nombre": "Bryan",
     "apellido": "Edward Smith",
     "telefono": 66224329,
