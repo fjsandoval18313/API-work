@@ -1,12 +1,12 @@
 {
   "name": "package.json",
   "version": "1.0.0",
-  "description": "Api get User",
+  "description": "API get User",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "fjsandoval",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
