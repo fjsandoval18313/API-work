@@ -1,0 +1,23 @@
+[
+    {
+    "codigo_oferta": 1,
+    "nombre": "Plan credito Q1050",
+    "internet": 100,
+    "apps": 7,
+    "precio": 1050
+},
+    {
+    "codigo_oferta": 2,
+    "nombre": "Plan credito Q960",
+    "internet": 90,
+    "apps": 7,
+    "precio": 960
+},
+    {
+    "codigo_oferta": 3,
+    "nombre": "Plan credito Q760",
+    "internet": 85,
+    "apps": 7,
+    "precio": 760
+}
+]

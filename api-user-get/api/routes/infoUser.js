@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const users = require('../../users.json'); // asumiendo el mismo path del server.js
+const users = require('../../users.json'); 
 
 router.get('/:codigo_usuario', (req, res) => {
     const {codigo_usuario} = req.params;
