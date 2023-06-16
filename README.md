@@ -1,6 +1,8 @@
 # API-work
  APIs para retencion
 
+Terminal: npm start
+
 Responds to path:
 
 
