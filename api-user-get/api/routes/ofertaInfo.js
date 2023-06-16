@@ -11,7 +11,7 @@ router.get('/:codigo_oferta', (req, res, next) => {
     if (offer) {
         res.status(200).json(offer); 
     } else {
-        res.status(404).json({ error: 'offer not found' });
+        res.status(404).json({ error: 'Offer Not Found' });
     }
 });
 

@@ -11,7 +11,7 @@ router.get('/:codigo_usuario', (req, res, next) => {
     if (user) {
         res.status(200).json(user); 
     } else {
-        res.status(404).json({ error: 'User not found' });
+        res.status(404).json({ error: 'User Not Found' });
     }
 });
 
