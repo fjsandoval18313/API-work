@@ -15,4 +15,15 @@ router.get('/:codigo_oferta', (req, res, next) => {
     }
 });
 
+
+router.post('/crearOrden', (req, res, next) => {
+    const orden = {
+        ID: req.body.ID
+    };
+    res.status(201).json({
+        message: 'Orden creada',
+        orden: orden
+    });
+});
+
 module.exports = router;
