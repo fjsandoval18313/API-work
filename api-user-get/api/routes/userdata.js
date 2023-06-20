@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/', (req, res, next) => {
-  const usuarios = [
+router.get('/:id', (req, res, next) => {
+    const userID = parseInt(req.params.id);
+    const usuarios = [
     {
       id: 1,
       nombre: "Usuario 1",
@@ -68,11 +69,15 @@ router.get('/', (req, res, next) => {
       });
     }
   });
-
-  res.status(200).json(usuarios);
+  const user = usuarios.find((usuario) => usuario.id ===userID);
+  
+  res.status(200).json(user);
 });
 
-// Función para obtener acciones hijas
+
+
+
+// Función para obtener acciones 
 function obteneracciones_asignadas(cantidad) {
   const accionesDisponibles = [
     {
