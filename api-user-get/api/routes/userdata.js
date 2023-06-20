@@ -10,11 +10,11 @@ router.get('/:id', (req, res, next) => {
       nombre: "Usuario 1",
       acciones: [
         {
-          nombre: "Acción Padre 1",
+          nombre: "Migracion BYOD",
           acciones_asignadas: []
         },
         {
-          nombre: "Acción Padre 2",
+          nombre: "Migracion Prepago",
           acciones_asignadas: []
         }
       ]
@@ -24,11 +24,11 @@ router.get('/:id', (req, res, next) => {
       nombre: "Usuario 2",
       acciones: [
         {
-          nombre: "Acción Padre 1",
+          nombre: "Migracion BYOD",
           acciones_asignadas: []
         },
         {
-          nombre: "Acción Padre 2",
+          nombre: "Migracion Prepago",
           acciones_asignadas: []
         }
       ]
@@ -38,7 +38,7 @@ router.get('/:id', (req, res, next) => {
       nombre: "Usuario 3",
       acciones: [
         {
-          nombre: "Acción Padre 1",
+          nombre: "Migracion BYOD",
           acciones_asignadas: []
         }
       ]
@@ -48,7 +48,7 @@ router.get('/:id', (req, res, next) => {
       nombre: "Usuario 4",
       acciones: [
         {
-          nombre: "Acción Padre 1",
+          nombre: "Migracion Prepago",
           acciones_asignadas: []
         }
       ]
@@ -85,11 +85,11 @@ router.get('/:id', (req, res, next) => {
 function obteneracciones_asignadas(cantidad) {
   const accionesDisponibles = [
     {
-      nombre: "Acción 1",
+      nombre: "Renovacion",
       ofertas_asignadas: ["Oferta 1", "Oferta 2", "Oferta 3"]
     },
     {
-      nombre: "Acción 2",
+      nombre: "Descuento",
       ofertas_asignadas: ["Oferta 4", "Oferta 5", "Oferta 6"]
     },
   ];
