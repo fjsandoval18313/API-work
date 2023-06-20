@@ -56,20 +56,37 @@ router.get('/:id', (req, res, next) => {
   ];
 
   // Asignar 4 acciones a los primeros dos usuarios y 1 acción a los demás
-  usuarios.forEach((usuario, index) => {
+usuarios.forEach((usuario, index) => {
     if (index < 2) {
-      // Asignar 4 acciones a los usuarios 1 y 2
+    // Asignar 4 acciones a los usuarios 1 y 2
       usuario.acciones.forEach(accionPadre => {
-        accionPadre.acciones_asignadas = obteneracciones_asignadas(4);
+        accionPadre.acciones_asignadas = obtain_acciones_asignadas(4);
+        accionPadre.acciones_asignadas.forEach(accion => {
+          const ofertasAsignadas = accion.ofertas_asignadas;
+          const randomIndex = Math.floor(Math.random() * ofertasAsignadas.length);
+          const ofertaAsignada = ofertasAsignadas[randomIndex];
+          accion.ofertas_asignadas = [ofertaAsignada]; 
+        });
       });
     } else {
       // Asignar 1 acción a los demás usuarios
       usuario.acciones.forEach(accionPadre => {
-        accionPadre.acciones_asignadas = obteneracciones_asignadas(1);
+        accionPadre.acciones_asignadas = obtain_acciones_asignadas(1);
+        accionPadre.acciones_asignadas.forEach(accion => {
+            const ofertasAsignadas = accion.ofertas_asignadas;
+            const randomIndex = Math.floor(Math.random() * ofertasAsignadas.length);
+            const ofertaAsignada = ofertasAsignadas[randomIndex];
+            accion.ofertas_asignadas = [ofertaAsignada]; 
+          });
       });
     }
   });
+
+
+
+
   const user = usuarios.find((usuario) => usuario.id ===userID);
+
 
   if (!user){
     return res.status(404).json({message: 'ID Not Found'});
@@ -82,7 +99,7 @@ router.get('/:id', (req, res, next) => {
 
 
 // Función para obtener acciones 
-function obteneracciones_asignadas(cantidad) {
+function obtain_acciones_asignadas(cantidad) {
   const accionesDisponibles = [
     {
       nombre: "Renovacion",
