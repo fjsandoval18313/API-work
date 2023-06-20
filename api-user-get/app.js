@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 
 const infoUserRoutes = require('./api/routes/infoUser');
 const ofertaInfoRoutes = require('./api/routes/ofertaInfo');
+const accionesRoutes = require('./api/routes/userdata');
+
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -28,7 +30,8 @@ app.use((req, res, next) => {
 // use methods
 app.use('/dataPrueba/infoUser', infoUserRoutes);
 app.use('/dataPrueba/ofertaInfo', ofertaInfoRoutes);
-  
+app.use('/dataPrueba/acciones', accionesRoutes);
+
 app.use((req, res, next) => {
     const error = new Error('Not Found');
     error.status = 404;
