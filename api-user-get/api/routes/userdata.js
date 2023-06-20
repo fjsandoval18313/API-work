@@ -70,8 +70,12 @@ router.get('/:id', (req, res, next) => {
     }
   });
   const user = usuarios.find((usuario) => usuario.id ===userID);
-  
-  res.status(200).json(user);
+
+  if (!user){
+    return res.status(404).json({message: 'ID Not Found'});
+  } else{
+    res.status(200).json(user);
+  }
 });
 
 
