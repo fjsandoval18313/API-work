@@ -5,6 +5,8 @@ Terminal: npm start
 
 Responds to path:
 
+API RETRIEVE USER ACTIONS: http://localhost:3000/dataPrueba/acciones
+
 
 API GET OFFER: http://localhost:3000/dataPrueba/ofertaInfo/{codigo_oferta} | codigos: 1-3
 
