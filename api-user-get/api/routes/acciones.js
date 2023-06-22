@@ -1,54 +1,84 @@
 const express = require('express');
 const router = express.Router();
+const users = require('../../users.json');
+const ofertas = require('../../oferta.json');
+const acciones = require('../../acciones.json');
 
+/**
+ * @swagger
+ * /dataPrueba/acciones/{id}:
+ *   get:
+ *     summary: Obtener informacion de las acciones del usuario por su codigo de usuario respectivo
+ *     tags: [acciones]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: Codigo del Usuario
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: User input Success!
+ *       404:
+ *         description: User not found
+ */
 
 router.get('/:id', (req, res, next) => {
-    const userID = parseInt(req.params.id);
+    const userID = req.params.id;
     const usuarios = [
     {
-      id: 1,
-      nombre: "Usuario 1",
+      id: users[0].codigo_usuario,
+      nombre: users[0].nombre,
+      servicio: users[0].servicio,
+      mesespendientes: users[0].mesespendientes,
       acciones: [
         {
-          nombre: "Migracion BYOD",
+          nombre: acciones[0].accion1,
           acciones_asignadas: []
         },
         {
-          nombre: "Migracion Prepago",
+          nombre: acciones[1].accion2,
           acciones_asignadas: []
         }
       ]
     },
     {
-      id: 2,
-      nombre: "Usuario 2",
+      id: users[1].codigo_usuario,
+      nombre: users[1].nombre,
+      servicio: users[1].servicio,
+      mesespendientes: users[1].mesespendientes,
       acciones: [
         {
-          nombre: "Migracion BYOD",
+          nombre: acciones[1].accion2,
           acciones_asignadas: []
         },
         {
-          nombre: "Migracion Prepago",
+          nombre: acciones[0].accion1,
           acciones_asignadas: []
         }
       ]
     },
     {
-      id: 3,
-      nombre: "Usuario 3",
+      id: users[2].codigo_usuario,
+      nombre: users[2].nombre,
+      servicio: users[2].servicio,
+      mesespendientes: users[2].mesespendientes,
       acciones: [
         {
-          nombre: "Migracion BYOD",
+          nombre: acciones[0].accion1,
           acciones_asignadas: []
         }
       ]
     },
     {
-      id: 4,
-      nombre: "Usuario 4",
+      id: users[3].codigo_usuario,
+      nombre: users[3].nombre,
+      servicio: users[3].servicio,
+      mesespendientes: users[3].mesespendientes,
       acciones: [
         {
-          nombre: "Migracion Prepago",
+          nombre: acciones[1].accion2,
           acciones_asignadas: []
         }
       ]
@@ -102,12 +132,12 @@ usuarios.forEach((usuario, index) => {
 function obtain_acciones_asignadas(cantidad) {
   const accionesDisponibles = [
     {
-      nombre: "Renovacion",
-      ofertas_asignadas: ["Oferta 1", "Oferta 2", "Oferta 3"]
+      nombre: acciones[2].accion3,
+      ofertas_asignadas: [ofertas[0].nombre,ofertas[1].nombre, ofertas[2].nombre]
     },
     {
-      nombre: "Descuento",
-      ofertas_asignadas: ["Oferta 4", "Oferta 5", "Oferta 6"]
+      nombre: acciones[3].accion4,
+      ofertas_asignadas: [ofertas[0].nombre, ofertas[1].nombre, ofertas[2].nombre]
     },
   ];
 
