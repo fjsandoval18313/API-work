@@ -17,6 +17,7 @@ const acciones = require('../../acciones.json');
  *         description: Codigo del Usuario
  *         schema:
  *           type: string
+ *           example: 1050-1053
  *     responses:
  *       200:
  *         description: User input Success!

@@ -7,21 +7,23 @@ const users = require('../../users.json');
  * @swagger
  * /dataPrueba/infoUser/{codigo_usuario}:
  *   get:
- *     summary: Obtener informacion del usuario utilizando el codigo de usuario respectivo
+ *     summary: Obtener información del usuario utilizando el código de usuario respectivo
  *     tags: [InfoUser]
  *     parameters:
  *       - in: path
  *         name: codigo_usuario
  *         required: true
- *         description: Codigo del Usuario
+ *         description: Código del Usuario
  *         schema:
  *           type: string
+ *           example: 1050-1056
  *     responses:
  *       200:
- *         description: User ID input success!
+ *         description: Éxito al ingresar el ID del usuario.
  *       404:
- *         description: User Not Found
+ *         description: Usuario no encontrado.
  */
+
 router.get('/:codigo_usuario', (req, res, next) => {
     const {codigo_usuario} = req.params;
     // el .json no debe ser un object, debe ser un array para el .find

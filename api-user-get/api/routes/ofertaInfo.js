@@ -16,6 +16,7 @@ const oferta = require('../../oferta.json');
  *         description: Codigo de Oferta
  *         schema:
  *           type: string
+ *           example: 1-3
  *     responses:
  *       200:
  *         description: Offer input success!
