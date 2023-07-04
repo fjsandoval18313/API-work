@@ -8,16 +8,16 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerOptions = {
     swaggerDefinition: {
       info: {
-        title: 'API retenciones moviles',
+        title: 'API retenciones moviles PR',
         description: 'API de prueba de datos generados para usuarios, ofertas y acciones',
         version: '1.0.0',
         contact: {
           name: 'Fernando Sandoval',
         },
-        servers: ['https://localhost:3000', 'https://026d-190-56-113-175.ngrok-free.app'],
+        servers: ['https://localhost:3000'],
       },
     },
-    apis: ['./api/routes/infoUser.js', './api/routes/ofertaInfo.js', './api/routes/acciones.js'],
+    apis: ['./api/routes/infoUser.js', './api/routes/ofertaInfo.js', './api/routes/acciones.js', './api/routes/userDataPrueba.js'],
   };
   
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
@@ -28,6 +28,7 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions);
 const infoUserRoutes = require('./api/routes/infoUser');
 const ofertaInfoRoutes = require('./api/routes/ofertaInfo');
 const accionesRoutes = require('./api/routes/acciones');
+const userDataPruebaRoutes = require('./api/routes/userDataPrueba');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -52,6 +53,7 @@ app.use((req, res, next) => {
 app.use('/dataPrueba/infoUser', infoUserRoutes);
 app.use('/dataPrueba/ofertaInfo', ofertaInfoRoutes);
 app.use('/dataPrueba/acciones', accionesRoutes);
+app.use('/userDataPrueba',userDataPruebaRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not Found');
