@@ -19,5 +19,22 @@
     "internet": "85",
     "apps": "7",
     "precio": "760"
+},
+{
+    "codigo_oferta": "4",
+    "nombre": "Factura Fija",
+    "internet": "100",
+    "apps": "7",
+    "precio": "950"
+},
+{
+    "codigo_oferta": "5",
+    "Oferta": "Credito",
+    "Nombre": "BYOD",
+    "internet": "100",
+    "apps": "7",
+    "precio": "900"
 }
+
+
 ]

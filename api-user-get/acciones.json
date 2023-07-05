@@ -1,17 +1,8 @@
 [
     {
-    "accion1": "Migracion BYOD"
+    "accion": "Renovacion"
 },
     {
-    "accion2": "Migracion Prepago"
-},
-    {
-    "accion3": "Renovacion"
-},
-    {
-    "accion4": "Descuento"
-},
-{
-    "accion": "undefined"
+    "accion": "Descuento"
 }
 ]

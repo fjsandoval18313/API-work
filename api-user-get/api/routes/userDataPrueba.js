@@ -27,48 +27,46 @@ const acciones = require('../../acciones.json');
  */
 
 router.get('/:id', (req, res, next) => {
-    const userID = req.params.id;
-    const usuarios = [
+  const userID = req.params.id;
+  const usuarios = [
     {
-      id: users[0].codigo_usuario, ...users[0], 
+      id: users[0].codigo_usuario,
+      ...users[0],
       acciones: [
         {
-          nombre: acciones[0].accion1,
           acciones_asignadas: []
         },
         {
-          nombre: acciones[1].accion2,
           acciones_asignadas: []
         }
       ]
     },
     {
-      id: users[1].codigo_usuario, ...users[1],
+      id: users[1].codigo_usuario,
+      ...users[1],
       acciones: [
         {
-          nombre: acciones[1].accion2,
           acciones_asignadas: []
         },
         {
-          nombre: acciones[0].accion1,
           acciones_asignadas: []
         }
       ]
     },
     {
-      id: users[2].codigo_usuario, ...users[2],
+      id: users[2].codigo_usuario,
+      ...users[2],
       acciones: [
         {
-          nombre: acciones[0].accion1,
           acciones_asignadas: []
         }
       ]
     },
     {
-      id: users[3].codigo_usuario, ...users[3],
+      id: users[3].codigo_usuario,
+      ...users[3],
       acciones: [
         {
-          nombre: acciones[1].accion2,
           acciones_asignadas: []
         }
       ]
@@ -76,71 +74,77 @@ router.get('/:id', (req, res, next) => {
   ];
 
   // Asignar 4 acciones a los primeros dos usuarios y 1 acción a los demás
-usuarios.forEach((usuario, index) => {
+  usuarios.forEach((usuario, index) => {
     if (index < 2) {
-    // Asignar 4 acciones a los usuarios 1 y 2
+      // Asignar 2 acciones a los usuarios 1 y 2
       usuario.acciones.forEach(accionPadre => {
-        accionPadre.acciones_asignadas = obtain_acciones_asignadas(4);
-        accionPadre.acciones_asignadas.forEach(accion => {
-          const ofertasAsignadas = accion.ofertas_asignadas;
-          const randomIndex = Math.floor(Math.random() * ofertasAsignadas.length);
-          const ofertaAsignada = ofertasAsignadas[randomIndex];
-          accion.ofertas_asignadas = [ofertaAsignada]; 
-        });
+        accionPadre.acciones_asignadas = obtain_acciones_asignadas(2);
       });
     } else {
       // Asignar 1 acción a los demás usuarios
       usuario.acciones.forEach(accionPadre => {
         accionPadre.acciones_asignadas = obtain_acciones_asignadas(1);
-        accionPadre.acciones_asignadas.forEach(accion => {
-            const ofertasAsignadas = accion.ofertas_asignadas;
-            const randomIndex = Math.floor(Math.random() * ofertasAsignadas.length);
-            const ofertaAsignada = ofertasAsignadas[randomIndex];
-            accion.ofertas_asignadas = [ofertaAsignada]; 
-          });
       });
     }
   });
 
+  const user = usuarios.find(usuario => usuario.id === userID);
 
-
-
-  const user = usuarios.find((usuario) => usuario.id ===userID);
-
-
-  if (!user){
-    return res.status(404).json({message: 'ID Not Found'});
-  } else{
+  if (!user) {
+    return res.status(404).json({ message: 'ID Not Found' });
+  } else {
     res.status(200).json(user);
   }
 });
 
-
-
-
-// Función para obtener acciones 
+// Función para obtener acciones
 function obtain_acciones_asignadas(cantidad) {
-    const accionesDisponibles = [
-      {
-        nombre: acciones[2].accion3,
-        ofertas_asignadas: [
-          { nombre: ofertas[0].nombre, ...ofertas[0] },
-          { nombre: ofertas[1].nombre, ...ofertas[1] },
-          { nombre: ofertas[2].nombre, ...ofertas[2] }
-        ]
-      },
-      {
-        nombre: acciones[3].accion4,
-        ofertas_asignadas: [
-          { nombre: ofertas[0].nombre, ...ofertas[0] },
-          { nombre: ofertas[1].nombre, ...ofertas[1] },
-          { nombre: ofertas[2].nombre, ...ofertas[2] }
-        ]
-      },
-    ];
-  
-    return accionesDisponibles.slice(0, cantidad);
+  const accionesDisponibles = [
+    {
+      nombre: acciones[0].accion,
+      ofertas_asignadas: [
+        { nombre: ofertas[0].nombre, ...ofertas[0] },
+        { nombre: ofertas[1].nombre, ...ofertas[1] },
+        { nombre: ofertas[2].nombre, ...ofertas[2] },
+        { nombre: ofertas[4].nombre, ...ofertas[4] }
+      ]
+    },
+    {
+      nombre: acciones[1].accion,
+      ofertas_asignadas: [
+        { nombre: ofertas[3].nombre, ...ofertas[3] }
+      ]
+    }
+  ];
+
+  const accionesAsignadas = [];
+  const accionesSeleccionadas = new Set();
+
+  while (accionesAsignadas.length < cantidad) {
+    const accionIndex = Math.floor(Math.random() * accionesDisponibles.length);
+    const accionAsignada = JSON.parse(JSON.stringify(accionesDisponibles[accionIndex])); // Clonar la acción asignada
+
+    if (!accionesSeleccionadas.has(accionAsignada.nombre)) {
+      const ofertasAsignadas = accionAsignada.ofertas_asignadas;
+      const ofertasDisponibles = [...ofertasAsignadas]; // Hacer una copia de las ofertas disponibles
+      const ofertasSeleccionadas = [];
+
+      while (ofertasSeleccionadas.length < cantidad && ofertasDisponibles.length > 0) {
+        const randomIndex = Math.floor(Math.random() * ofertasDisponibles.length);
+        const ofertaAsignada = ofertasDisponibles[randomIndex];
+        ofertasSeleccionadas.push(ofertaAsignada);
+        ofertasDisponibles.splice(randomIndex, 1);
+      }
+
+      accionAsignada.ofertas_asignadas = ofertasSeleccionadas;
+      accionesAsignadas.push(accionAsignada);
+      accionesSeleccionadas.add(accionAsignada.nombre);
+    }
   }
+
+  return accionesAsignadas;
+}
+
 
 
 module.exports = router;
