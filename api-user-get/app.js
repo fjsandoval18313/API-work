@@ -17,7 +17,7 @@ const swaggerOptions = {
         servers: ['https://localhost:3000'],
       },
     },
-    apis: ['./api/routes/infoUser.js', './api/routes/ofertaInfo.js', './api/routes/acciones.js', './api/routes/userDataPrueba.js'],
+    apis: ['./api/routes/infoUser.js', './api/routes/ofertaInfo.js', './api/routes/acciones.js', './api/routes/userDataPrueba.js', './api/routes/userData.js'],
   };
   
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
@@ -29,6 +29,7 @@ const infoUserRoutes = require('./api/routes/infoUser');
 const ofertaInfoRoutes = require('./api/routes/ofertaInfo');
 const accionesRoutes = require('./api/routes/acciones');
 const userDataPruebaRoutes = require('./api/routes/userDataPrueba');
+const dataUserRoutes = require('./api/routes/userData');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -49,11 +50,11 @@ app.use((req, res, next) => {
     next();
 });
 
-
 app.use('/dataPrueba/infoUser', infoUserRoutes);
 app.use('/dataPrueba/ofertaInfo', ofertaInfoRoutes);
 app.use('/dataPrueba/acciones', accionesRoutes);
 app.use('/userDataPrueba',userDataPruebaRoutes);
+app.use('/userData', dataUserRoutes);
 
 app.use((req, res, next) => {
     const error = new Error('Not Found');
