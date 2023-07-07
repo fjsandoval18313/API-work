@@ -35,11 +35,11 @@ router.get('/:id', (req, res, next) => {
       mesespendientes: users[0].mesespendientes,
       acciones: [
         {
-          nombre: acciones[0].accion1,
+          nombre: acciones[0].accion,
           acciones_asignadas: []
         },
         {
-          nombre: acciones[1].accion2,
+          nombre: acciones[1].accion,
           acciones_asignadas: []
         }
       ]
@@ -51,11 +51,11 @@ router.get('/:id', (req, res, next) => {
       mesespendientes: users[1].mesespendientes,
       acciones: [
         {
-          nombre: acciones[1].accion2,
+          nombre: acciones[1].accion,
           acciones_asignadas: []
         },
         {
-          nombre: acciones[0].accion1,
+          nombre: acciones[0].accion,
           acciones_asignadas: []
         }
       ]
@@ -67,7 +67,7 @@ router.get('/:id', (req, res, next) => {
       mesespendientes: users[2].mesespendientes,
       acciones: [
         {
-          nombre: acciones[0].accion1,
+          nombre: acciones[0].accion,
           acciones_asignadas: []
         }
       ]
@@ -79,46 +79,28 @@ router.get('/:id', (req, res, next) => {
       mesespendientes: users[3].mesespendientes,
       acciones: [
         {
-          nombre: acciones[1].accion2,
+          nombre: acciones[1].accion,
           acciones_asignadas: []
         }
       ]
     }
   ];
 
-  // Asignar 4 acciones a los primeros dos usuarios y 1 acción a los demás
-usuarios.forEach((usuario, index) => {
+// Asignar 4 acciones a los primeros dos usuarios y 1 acción a los demás
+  usuarios.forEach((usuario, index) => {
     if (index < 2) {
-    // Asignar 4 acciones a los usuarios 1 y 2
+      // Asignar 4 acciones a los usuarios 1 y 2
       usuario.acciones.forEach(accionPadre => {
         accionPadre.acciones_asignadas = obtain_acciones_asignadas(4);
-        accionPadre.acciones_asignadas.forEach(accion => {
-          const ofertasAsignadas = accion.ofertas_asignadas;
-          const randomIndex = Math.floor(Math.random() * ofertasAsignadas.length);
-          const ofertaAsignada = ofertasAsignadas[randomIndex];
-          accion.ofertas_asignadas = [ofertaAsignada]; 
-        });
       });
     } else {
       // Asignar 1 acción a los demás usuarios
       usuario.acciones.forEach(accionPadre => {
         accionPadre.acciones_asignadas = obtain_acciones_asignadas(1);
-        accionPadre.acciones_asignadas.forEach(accion => {
-            const ofertasAsignadas = accion.ofertas_asignadas;
-            const randomIndex = Math.floor(Math.random() * ofertasAsignadas.length);
-            const ofertaAsignada = ofertasAsignadas[randomIndex];
-            accion.ofertas_asignadas = [ofertaAsignada]; 
-          });
       });
     }
   });
-
-
-
-
   const user = usuarios.find((usuario) => usuario.id ===userID);
-
-
   if (!user){
     return res.status(404).json({message: 'ID Not Found'});
   } else{
@@ -133,11 +115,11 @@ usuarios.forEach((usuario, index) => {
 function obtain_acciones_asignadas(cantidad) {
   const accionesDisponibles = [
     {
-      nombre: acciones[2].accion3,
+      nombre: acciones[0].accion,
       ofertas_asignadas: [ofertas[0].nombre,ofertas[1].nombre, ofertas[2].nombre]
     },
     {
-      nombre: acciones[3].accion4,
+      nombre: acciones[1].accion,
       ofertas_asignadas: [ofertas[0].nombre, ofertas[1].nombre, ofertas[2].nombre]
     },
   ];

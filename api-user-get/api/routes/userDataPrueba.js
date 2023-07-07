@@ -76,9 +76,9 @@ router.get('/:id', (req, res, next) => {
   // Asignar 4 acciones a los primeros dos usuarios y 1 acción a los demás
   usuarios.forEach((usuario, index) => {
     if (index < 2) {
-      // Asignar 2 acciones a los usuarios 1 y 2
+      // Asignar 4 acciones a los usuarios 1 y 2
       usuario.acciones.forEach(accionPadre => {
-        accionPadre.acciones_asignadas = obtain_acciones_asignadas(2);
+        accionPadre.acciones_asignadas = obtain_acciones_asignadas(4);
       });
     } else {
       // Asignar 1 acción a los demás usuarios
@@ -87,17 +87,18 @@ router.get('/:id', (req, res, next) => {
       });
     }
   });
-
-  const user = usuarios.find(usuario => usuario.id === userID);
-
-  if (!user) {
-    return res.status(404).json({ message: 'ID Not Found' });
-  } else {
+  const user = usuarios.find((usuario) => usuario.id ===userID);
+  if (!user){
+    return res.status(404).json({message: 'ID Not Found'});
+  } else{
     res.status(200).json(user);
   }
 });
 
-// Función para obtener acciones
+
+
+
+// Función para obtener acciones 
 function obtain_acciones_asignadas(cantidad) {
   const accionesDisponibles = [
     {
@@ -117,34 +118,10 @@ function obtain_acciones_asignadas(cantidad) {
     }
   ];
 
-  const accionesAsignadas = [];
-  const accionesSeleccionadas = new Set();
-
-  while (accionesAsignadas.length < cantidad) {
-    const accionIndex = Math.floor(Math.random() * accionesDisponibles.length);
-    const accionAsignada = JSON.parse(JSON.stringify(accionesDisponibles[accionIndex])); // Clonar la acción asignada
-
-    if (!accionesSeleccionadas.has(accionAsignada.nombre)) {
-      const ofertasAsignadas = accionAsignada.ofertas_asignadas;
-      const ofertasDisponibles = [...ofertasAsignadas]; // Hacer una copia de las ofertas disponibles
-      const ofertasSeleccionadas = [];
-
-      while (ofertasSeleccionadas.length < cantidad && ofertasDisponibles.length > 0) {
-        const randomIndex = Math.floor(Math.random() * ofertasDisponibles.length);
-        const ofertaAsignada = ofertasDisponibles[randomIndex];
-        ofertasSeleccionadas.push(ofertaAsignada);
-        ofertasDisponibles.splice(randomIndex, 1);
-      }
-
-      accionAsignada.ofertas_asignadas = ofertasSeleccionadas;
-      accionesAsignadas.push(accionAsignada);
-      accionesSeleccionadas.add(accionAsignada.nombre);
-    }
-  }
-
-  return accionesAsignadas;
+  return accionesDisponibles.slice(0, cantidad).map(accion => ({ ...accion }));
 }
 
 
 
 module.exports = router;
+
