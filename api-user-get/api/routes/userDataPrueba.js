@@ -96,8 +96,6 @@ router.get('/:id', (req, res, next) => {
 });
 
 
-
-
 // Función para obtener acciones 
 function obtain_acciones_asignadas(cantidad) {
   const accionesDisponibles = [
@@ -124,4 +122,3 @@ function obtain_acciones_asignadas(cantidad) {
 
 
 module.exports = router;
-
