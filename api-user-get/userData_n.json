@@ -1,0 +1,163 @@
+{
+    "id": "64b94de2d193ed2943e24fa1",
+    "offers": [
+        {
+            "product_name_title": "Plan",
+
+            "data_label": "40GB",
+
+            "data_label_title": "Internet incluido",
+
+            "data_code_title": "Código de Datos",
+
+            "apps_icons_unlimited": "<img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/whatsapp.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/facebook.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/instagram.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/spotify.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/deezer.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/amazon_music.png\" style=\"width: 24px;border-radius: 5px;\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/ticktok.png\" style=\"width: 24px;border-radius: 5px;\">",
+
+            "quota_label_title": "Precio",
+
+            "sms_code": "107",
+
+            "sms_code_title": "Código de SMS",
+
+            "min_onnet": "8000.0",
+
+            "product_name": "Plan Factura Fija Q315",
+
+            "data_code": "609",
+
+            "stage": "2",
+
+            "roaming_link": "",
+
+            "voice_code_title": "Código de Voz",
+
+            "voice_code": "336",
+
+            "apps_icons_unlimited_title": "Apps incluidas",
+
+            "min_extnet": "3000.0",
+
+            "min_extnet_title": "Minutos otros operadores / internacionales",
+
+            "min_onnet_title": "Minutos a Tigo",
+
+            "roaming_link_title": "Roaming",
+
+            "category": "Change plan",
+
+            "quota_label": "Q315"
+        },
+        {
+            "product_name_title": "Plan",
+            "data_label": "30GB",
+            "data_label_title": "Internet incluido",
+            "data_code_title": "Código de Datos",
+            "apps_icons_unlimited": "<img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/whatsapp.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/facebook.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/instagram.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/spotify.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/deezer.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/amazon_music.png\" style=\"width: 24px;border-radius: 5px;\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/ticktok.png\" style=\"width: 24px;border-radius: 5px;\">",
+            "quota_label_title": "Precio",
+            "sms_code": "107",
+            "sms_code_title": "Código de SMS",
+            "min_onnet": "8000.0",
+            "product_name": "Plan Factura Fija BYOD Q199",
+            "data_code": "713",
+            "stage": "2",
+            "roaming_link": "",
+            "voice_code_title": "Código de Voz",
+            "voice_code": "64",
+            "apps_icons_unlimited_title": "Apps incluidas",
+            "min_extnet": "3000.0",
+            "min_extnet_title": "Minutos otros operadores / internacionales",
+            "min_onnet_title": "Minutos a Tigo",
+            "roaming_link_title": "Roaming",
+            "category": "Change plan",
+            "quota_label": "Q199"
+        },
+        {
+            "product_name_title": "Plan",
+
+            "data_label": "40GB",
+
+            "data_label_title": "Internet incluido",
+
+            "data_code_title": "Código de Datos",
+            
+	    "apps_icons_unlimited": "<img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/whatsapp.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/facebook.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/instagram.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/spotify.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/deezer.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/amazon_music.png\" style=\"width: 24px;border-radius: 5px;\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/ticktok.png\" style=\"width: 24px;border-radius: 5px;\">",
+            "quota_label_title": "Precio",
+
+            "sms_code": "107",
+
+            "sms_code_title": "Código de SMS",
+
+            "min_onnet": "8000.0",
+
+            "product_name": "Plan Factura Fija Q249",
+
+            "data_code": "635",
+
+            "stage": "1",
+
+            "roaming_link": "",
+
+            "voice_code_title": "Código de Voz",
+
+            "voice_code": "899",
+
+            "apps_icons_unlimited_title": "Apps incluidas",
+
+            "min_extnet": "3000.0",
+
+            "min_extnet_title": "Minutos otros operadores / internacionales",
+
+            "min_onnet_title": "Minutos a Tigo",
+
+            "roaming_link_title": "Roaming",
+
+            "category": "Renovation",
+
+            "quota_label": "Q249"
+        },
+        {
+            "product_name_title": "Plan",
+            "data_label": "40GB",
+            "data_label_title": "Internet incluido",
+            "data_code_title": "Código de Datos",
+            "apps_icons_unlimited": "<img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/whatsapp.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/facebook.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/instagram.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/spotify.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/deezer.png\" style=\"width: 24px\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/amazon_music.png\" style=\"width: 24px;border-radius: 5px;\"> <img align=\"center\" src=\"https://horus.tigo.com.gt/content/img/icons/apps/ticktok.png\" style=\"width: 24px;border-radius: 5px;\">",
+            "quota_label_title": "Precio",
+            "sms_code": "107",
+            "sms_code_title": "Código de SMS",
+            "min_onnet": "8000.0",
+            "product_name": "Plan Factura Fija Q315",
+            "data_code": "609",
+            "stage": "1",
+            "roaming_link": "",
+            "voice_code_title": "Código de Voz",
+            "voice_code": "336",
+            "apps_icons_unlimited_title": "Apps incluidas",
+            "min_extnet": "3000.0",
+            "min_extnet_title": "Minutos otros operadores / internacionales",
+            "min_onnet_title": "Minutos a Tigo",
+            "roaming_link_title": "Roaming",
+            "category": "Renovation",
+            "quota_label": "Q315"
+        },
+        {
+            "product_name_title": "Plan",
+            "amount": "50",
+            "amount_title": "Monto",
+            "stage": "1",
+            "category": "Discount",
+            "product_name": "50% Descuento por 3 meses"
+        }
+    ],
+    "current_info": {
+        "plan_type": "FACTURA FIJA",
+        "subscriber_id": "50253145635",
+        "contract_cycle": "E",
+        "dob": "05/10/1991",
+        "nit": "7024591-6",
+        "last_name": "MEJIA REYES",
+        "dpi": "1793768610101",
+        "first_name": "AXEL RICARDO",
+        "customer_code": "905045",
+        "annex": "60338297",
+        "contract_start": "Mon Dec 19 00:00:00 CST 2022"
+    }
+}
